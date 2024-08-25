@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Records.MainPage" NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Source="grades.png" Aspect="AspectFill" Grid.Row="0"/>
+        
+        <StackLayout Grid.Row="1">
+            
+            <Image Source="cap.png" WidthRequest="130" Margin="0,-115,0,10"/>
+            
+            <StackLayout HorizontalOptions="Center" Grid.Column="1" Orientation="Horizontal" Margin="0,-10,0,0" Spacing="1">
+                
+                <Label Text="Grade"
+                       FontSize="36"
+                       FontFamily="Cabin"
+                       TextColor="#FF3250"/>
+                
+                <Label Text="Track"
+                       FontSize="36"
+                       FontFamily="Cabin"
+                       TextColor="#4A4B4D" />
+                
+            </StackLayout>
+            
+            <Label Text="Sigue tu progreso, alcanza tus metas."
+                   FontSize="10"
+                   FontFamily="Metropolis"
+                   TextColor="#4A4B4D" 
+                   WidthRequest="375"
+                   HorizontalOptions="Center" 
+                   CharacterSpacing="5"
+                   Margin="50,0,0,0"/>
+            
+            <Label Text="El control de tu educación nunca ha sido tan fácil."
+                   FontSize="13"
+                   FontFamily="Metropolis"
+                   TextColor="#4A4B4D"
+                   HorizontalOptions="Center"
+                   CharacterSpacing="3" 
+                   Margin="40,40,30,60"/>
+            
+            <Button Text="Iniciar Sesion"
+                    BackgroundColor="#FF5A3C" 
+                    TextColor="#fff" 
+                    WidthRequest="410" 
+                    HeightRequest="55" 
+                    HorizontalOptions="Center" 
+                    CornerRadius="30"/>
+            
+            <Button Text="Registrarse"
+                    BackgroundColor="#fff"
+                    TextColor="#FF5A3C"
+                    BorderColor="#FF5A3C"
+                    BorderWidth="1"
+                    WidthRequest="410"
+                    HeightRequest="55"
+                    HorizontalOptions="Center"
+                    CornerRadius="30"
+                    Margin="0,10,0,0"/>
+        </StackLayout>
+    </Grid>
+    
+
+</ContentPage>
