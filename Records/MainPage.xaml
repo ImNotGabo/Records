@@ -1,7 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Records.MainPage" NavigationPage.HasNavigationBar="False">
+             x:Class="Records.MainPage" 
+             NavigationPage.HasNavigationBar="False"
+             xmlns:vm="clr-namespace:Records.ModelView"
+             >
+    
+    <ContentPage.BindingContext>
+        <vm:BaseModel x:Name="vm" />
+    </ContentPage.BindingContext>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -44,7 +52,8 @@
                    CharacterSpacing="3" 
                    Margin="40,40,30,60"/>
             
-            <Button Text="Iniciar Sesion"
+            <Button Command="{Binding Login}"
+                    Text="Iniciar Sesion"
                     BackgroundColor="#FF5A3C" 
                     TextColor="#fff" 
                     WidthRequest="410" 
@@ -52,7 +61,8 @@
                     HorizontalOptions="Center" 
                     CornerRadius="30"/>
             
-            <Button Text="Registrarse"
+            <Button Command="{Binding Sign}"
+                    Text="Registrarse"
                     BackgroundColor="#fff"
                     TextColor="#FF5A3C"
                     BorderColor="#FF5A3C"
