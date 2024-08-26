@@ -1,12 +1,121 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:vm="clr-namespace:Records.ModelView"
              x:Class="Records.SignUp">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to SignUp!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    
+    <ContentPage.BindingContext>
+        <vm:SignUpClass />
+    </ContentPage.BindingContext>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout HorizontalOptions="Center">
+            <Label HorizontalTextAlignment="Center"
+                   Text="Regístrate"
+                   FontSize="40"
+                   FontFamily="Metropolis"
+                   TextColor="#4A4B4D"
+                   Margin="0,50,0,0" />
+            
+            <Label HorizontalTextAlignment="Center"
+                   Text="Agrega tus datos para registrarte"
+                   FontSize="15"
+                   FontFamily="Metropolis"
+                   TextColor="#7C7D7E"
+                   Margin="0,10,0,0" />
+            
+            <StackLayout Margin="0,40,0,0">
+                <Frame BackgroundColor="#F2F2F2"
+                   CornerRadius="30"
+                   WidthRequest="350"
+                   HeightRequest="50"
+                   HasShadow="False"
+                   Margin="0,40,0,0">
+                
+                <Entry HorizontalTextAlignment="Start"
+                       Placeholder="Nombre"
+                       FontSize="16"
+                       PlaceholderColor="#B6B7B7"
+                       TextColor="#000"
+                       Margin="0,-30,0,-30" />
+            </Frame>
+            
+            <Frame BackgroundColor="#F2F2F2"
+                   CornerRadius="30"
+                   WidthRequest="350"
+                   HeightRequest="20"
+                   HasShadow="False"
+                   Margin="0,20,0,0">
+                
+                <Entry HorizontalTextAlignment="Start"
+                       FontSize="16"
+                       Placeholder="Correo electrónico"
+                       PlaceholderColor="#B6B7B7"
+                       TextColor="#000"
+                       Margin="0,-30,30,-30" />
+            </Frame>
+            <Frame BackgroundColor="#F2F2F2"
+                   CornerRadius="30"
+                   WidthRequest="350"
+                   HeightRequest="20"
+                   HasShadow="False"
+                   Margin="0,20,0,0">
+                <Entry HorizontalTextAlignment="Start"
+                       FontSize="16"
+                       Placeholder="Número de teléfono móvil"
+                       PlaceholderColor="#B6B7B7"
+                       TextColor="#000"
+                       Margin="0,-30,30,-30" />
+            </Frame>
+            
+            <Frame BackgroundColor="#F2F2F2"
+                   CornerRadius="30"
+                   WidthRequest="350"
+                   HeightRequest="20"
+                   HasShadow="False"
+                   Margin="0,20,0,0">
+                
+                <Entry HorizontalTextAlignment="Start"
+                       FontSize="16"
+                       Placeholder="Tu contraseña"
+                       PlaceholderColor="#B6B7B7"
+                       TextColor="#000"
+                       Margin="0,-30,30,-30" />
+            </Frame>
+
+            </StackLayout>
+            <Button 
+                    Text="Regístrarse"
+                    BackgroundColor="#FF5A3C"
+                    TextColor="#fff"
+                    FontSize="15"
+                    WidthRequest="380"
+                    HeightRequest="60"
+                    HorizontalOptions="Center"
+                    CornerRadius="30"
+                    Margin="0,60,0,0" />
+            
+            <StackLayout HorizontalOptions="Center"
+                         Orientation="Horizontal"
+                         Margin="0,20,0,0"
+                         Spacing="1">
+                <Label Text="¿Ya tienes una cuenta? "
+                       FontSize="12"
+                       FontFamily="Cabin"
+                       TextColor="#4A4B4D"
+                       CharacterSpacing="2" />
+                
+                <Label Text="Inicia sesión"
+                       FontSize="12"
+                       FontFamily="Cabin"
+                       TextColor="#FF3250"
+                       CharacterSpacing="2" />
+            </StackLayout>
         </StackLayout>
-    </ContentPage.Content>
+    </Grid>
 </ContentPage>

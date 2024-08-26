@@ -1,12 +1,151 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Records.Login">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Login!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+             x:Class="Records.Login"
+             xmlns:vm="clr-namespace:Records.ModelView"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <ContentPage.BindingContext>
+        <vm:LoginClass x:Name="vm" />
+    </ContentPage.BindingContext>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <StackLayout HorizontalOptions="Center">
+            
+            <Label HorizontalTextAlignment="Center"
+                   Text="Iniciar Sesión"
+                   FontSize="40"
+                   FontFamily="Metropolis"
+                   TextColor="#4A4B4D"
+                   Margin="0,50,0,0" />
+            
+            <Label HorizontalTextAlignment="Center"
+                   Text="Agregue sus datos para iniciar sesión"
+                   FontSize="15"
+                   FontFamily="Metropolis"
+                   TextColor="#7C7D7E"
+                   Margin="0,10,0,0" />
+            
+            <Frame BackgroundColor="#F2F2F2"
+                   CornerRadius="30"
+                   WidthRequest="350"
+                   HeightRequest="20"
+                   HasShadow="False"
+                   Margin="0,40,0,0">
+                
+                <Entry HorizontalTextAlignment="Start"
+                       Placeholder="Correo electrónico"
+                       FontSize="16"
+                       PlaceholderColor="#B6B7B7"
+                       TextColor="#000"
+                       Margin="0,-30,0,-30"
+                       />
+            </Frame>
+            
+            <Frame BackgroundColor="#F2F2F2"
+                   CornerRadius="30"
+                   WidthRequest="350"
+                   HeightRequest="20"
+                   HasShadow="False"
+                   Margin="0,20,0,0">
+                
+                <Entry HorizontalTextAlignment="Start"
+                       FontSize="16"
+                       Placeholder="Contraseña"
+                       PlaceholderColor="#B6B7B7"
+                       TextColor="#000"
+                       Margin="0,-30,30,-30" />
+            </Frame>
+           
         </StackLayout>
-    </ContentPage.Content>
+        
+        <StackLayout HorizontalOptions="Center" 
+                     Grid.Row="1"
+                     Margin="0,-120,0,0"
+                     >
+            <Button Command="{Binding back}"
+                    Text="Iniciar Sesión"
+                    BackgroundColor="#FF5A3C"
+                    TextColor="#fff"
+                    WidthRequest="380"
+                    HeightRequest="60"
+                    HorizontalOptions="Center"
+                    CornerRadius="30"
+                    Margin="0,30,0,0" />
+            
+            <Label HorizontalTextAlignment="Center"
+                   Text="¿Olvidaste tu contraseña?"
+                   FontSize="15"
+                   FontFamily="Metropolis"
+                   TextColor="#7C7D7E"
+                   Margin="0,20,0,0" />
+            
+            <Label HorizontalTextAlignment="Center"
+                   Text="o Inicia sesión con"
+                   FontSize="15"
+                   FontFamily="Metropolis"
+                   TextColor="#7C7D7E"
+                   Margin="0,60,0,0" />
+            
+            <StackLayout  Orientation="Horizontal" 
+                          Spacing="-200">
+                <Button Command="{Binding back}"
+                        Text="Iniciar sesión con Facebook"
+                        FontSize="12"
+                        FontFamily="Metropolis"
+                        TextColor="#fff"
+                        BackgroundColor="#138DE5"
+                        WidthRequest="380"
+                        HeightRequest="60"
+                        HorizontalOptions="Center"
+                        CornerRadius="30"
+                        Margin="0,20,0,0" />
+                <Image Source="FacebookLogo" WidthRequest="20" HeightRequest="20" Margin="-140,16,0,0"/>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal"
+                         Spacing="-200">
+                <Button Command="{Binding back}"
+                    Text="Iniciar sesión con Google"
+                    FontSize="12"
+                    FontFamily="Metropolis"
+                    BackgroundColor="#FFF"
+                    BorderColor="#000"
+                    BorderWidth="1"
+                    TextColor="#000"
+                    WidthRequest="380"
+                    HeightRequest="60"
+                    HorizontalOptions="Center"
+                    CornerRadius="30"
+                    Margin="0,20,0,0" />
+                
+                <Image Source="GoogleLogo"
+                       WidthRequest="20"
+                       HeightRequest="20"
+                       Margin="-140,25,0,0" />
+            </StackLayout>
+            
+            <StackLayout HorizontalOptions="Center"
+                         Orientation="Horizontal"
+                         Margin="0,80,0,0"
+                         Spacing="1">
+                <Label Text="¿No tienes una cuenta? "
+                       FontSize="12"
+                       FontFamily="Cabin"
+                       TextColor="#4A4B4D"
+                       CharacterSpacing="2"/>
+                <Label Text="Regístrate"
+                       FontSize="12"
+                       FontFamily="Cabin"
+                       TextColor="#FF3250" 
+                       CharacterSpacing="2"/>
+                
+            </StackLayout>
+        </StackLayout>
+    </Grid>
 </ContentPage>
